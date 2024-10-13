@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimized Routes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Optimized Routes</h1>
+    <div>
+        {% if routes %}
+            <ul>
+                {% for route in routes %}
+                    <li>Route {{ loop.index }}: 
+                        {{ route | safe }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No routes found.</p>
+        {% endif %}
+    </div>
+
+    <div>
+        <a href="{{ url_for('visualize_routes', routes=routes) }}">Visualize Routes</a>
+    </div>
+</body>
+</html>

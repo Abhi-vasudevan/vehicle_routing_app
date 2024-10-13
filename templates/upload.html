@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Excel Files</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Upload Distance and Demand Matrices</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="distance_matrix">Distance Matrix (Excel):</label>
+        <input type="file" name="distance_matrix" required><br><br>
+        
+        <label for="demand_matrix">Demand Matrix (Excel):</label>
+        <input type="file" name="demand_matrix" required><br><br>
+        
+        <input type="submit" value="Upload and Optimize">
+    </form>
+</body>
+</html>
+
